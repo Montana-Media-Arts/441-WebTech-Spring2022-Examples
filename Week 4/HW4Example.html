@@ -18,11 +18,16 @@
                 document.getElementById("btnSubmit2").style.display="block";
                 
 
-                myQuestion.innerHTML = "Oh you chose green. What is your favorite food?";
+                myQuestion.innerHTML = "Green is a great choice. Is the color of generosity. Would you be willing to give food to those in need?";
             }
             else if(myChoice === "Blue")
             {
-                myQuestion.innerHTML = "You chose blue.  What is your favorite movie?";
+                document.getElementById("choice").style.display="none";
+                document.getElementById("btnSubmit").style.display="none";
+                
+                document.getElementById("choice3").style.display="block";
+                document.getElementById("btnSubmit3").style.display="block";
+                myQuestion.innerHTML = "Blue is the color of loyalty and sincerity.  Are you willing to show up and stand by those who need a friend?";
 
             }
             else
@@ -33,16 +38,31 @@
         }
         function getChoice2()
         {
-            var food = document.getElementById("choice2").value;
+            var answer = document.getElementById("choice2").value;
             var myQuestion = document.getElementById("question");
-            if(food === "tacos")
+            if(answer === "yes")
             {
-                document.getElementById("mainImage").src = "taco.jpg"
-                myQuestion.innerHTML = "I love tacos on Tuesdays!";
+                document.getElementById("mainImage").src = "grateful.jpg"
+                myQuestion.innerHTML = "Thank you for your kindness!";
             }
-            else if(food === "nachos")
+            else if(answer === "no")
             {
-                myQuestion.innerHTML = "I love nachos, but nachos do not love me.";
+                myQuestion.innerHTML = "Please remember we are all in this together.";
+            }
+        }
+
+        function getChoice3()
+        {
+            var answer = document.getElementById("choice3").value;
+            var myQuestion = document.getElementById("question");
+            if(answer === "yes")
+            {
+                document.getElementById("mainImage").src = "together.jpg"
+                myQuestion.innerHTML = "Thank you for your kindness!";
+            }
+            else if(answer === "no")
+            {
+                myQuestion.innerHTML = "Please remember we are all in this together.";
             }
         }
     </script>
@@ -64,10 +84,10 @@
         <input type="text" size="30" id="choice" value="Please enter Green or Blue">
         <button id="btnSubmit" onclick="getChoice1();">Click to continue</button>
 
-        <input type="text" size="30" id="choice2" value="Enter favorite food (tacos or nachos)." style="display:none">
+        <input type="text" size="30" id="choice2" value="Enter yes or no." style="display:none">
         <button id="btnSubmit2" onclick="getChoice2();"  style="display:none">Click to continue</button>
 
-        <input type="text" size="30" id="choice3" value="Enter favorite movie."  style="display:none">
+        <input type="text" size="30" id="choice3" value="Enter yes or no."  style="display:none">
         <button id="btnSubmit3" onclick="getChoice3();" style="display:none">Click to continue</button>
 
     </body>
